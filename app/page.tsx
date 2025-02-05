@@ -1,13 +1,32 @@
-import Link from "next/link";
+import React from 'react';
+import styles from '@/styles/signin.module.css';
+import Logo from '@/components/Logo';
+import BackButton from '@/components/BackButton';
+import SignInForm from '@/components/SignInForm';
 
-export default function Home() {
+export default function SignInPage() {
   return (
-    <main style={{ textAlign: "center", padding: "50px" }}>
-      <h1>Welcome</h1>
-      <p>This is the homepage. Click below to sign in.</p>
-      <Link href="/signin">
-        <button style={{ padding: "10px 20px", fontSize: "16px" }}>Go to Sign In</button>
-      </Link>
-    </main>
+    <div className={styles.container}>
+      {/* Left Section: Logo & Branding */}
+      <div className={styles.leftSection}>
+        <div className={styles.backButtonContainer}>
+          <BackButton />
+        </div>
+        <div className={styles.logoContainer}>
+          <div className={styles.logoGroup}>
+            <Logo />
+            <h1 className={styles.logoText}>lighthouse</h1>
+          </div>
+          <h5 className={styles.portalText}>admin portal</h5>
+        </div>
+      </div>
+
+      {/* Right Section: Sign-In Form */}
+      <div className={styles.rightSection}>
+        <div className={styles.card}>          
+          <SignInForm />
+        </div>
+      </div>
+    </div>
   );
 }
