@@ -1,0 +1,145 @@
+/* Dashboard Layout */
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+  gap: 24px;
+  padding-left: 24px;
+  margin-right: 24px;
+}
+
+/* Page Title */
+.pageTitle {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 72px;
+  margin-top: 12px;
+  min-width: 72px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  justify-content: space-between;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bottom Menu */
+.bottomMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+/* Logout Button */
+.logoutButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  width: 100%;
+}
+
+/* Check Button */
+.checkButton {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.checkButton:hover {
+  opacity: 0.5;
+}
+
+/* Main Content Area */
+.mainContent {
+  flex-grow: 1;
+  padding: 2rem;
+  margin-left: 72px;
+  overflow-x: hidden;
+}
+
+/* Dashboard Page Content */
+.dashboardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Search Container */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  gap: 10px;
+  justify-content: space-between;
+  border-radius: 9999px;
+  border: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+/* Search Icon */
+.searchIcon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Search Input */
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  flex: 1;
+}
+.searchInput::placeholder {
+  color: rgba(26, 26, 26, 0.25);
+}
+
+/* Logout Button */
+.logoutButton {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 64px;
+    min-width: 64px;
+  }
+
+  .menu img,
+  .bottomMenu img {
+    width: 20px;
+    height: 20px;
+  }
+}

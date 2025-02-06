@@ -1,0 +1,46 @@
+/* Pagination Container  */
+.paginationContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+  padding-right: 12px;
+}
+
+/* Labels */
+.label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Dropdowns */
+.dropdown {
+  padding: 4px 8px;
+  padding-right: 24px;
+  border: 1px solid #a3a3a3;
+  border-radius: 4px;
+  background: white;
+  font-size: 14px;
+  width: auto;
+  text-align: center;
+  appearance: none;
+  background-image: url("/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+}
+/* Chevron Buttons */
+.chevronButton {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Rotate Right Chevron */
+.rotateRight {
+  transform: rotate(180deg);
+}
