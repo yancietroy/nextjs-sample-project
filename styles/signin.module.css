@@ -1,178 +1,204 @@
-/* Main container using flexbox for a two-column layout */
+/* Main container */
 .container {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  /* Left section styling (unchanged) */
-  .leftSection {
-    flex: 1;
-    display: flex;
+  display: flex;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Left section styling */
+.leftSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Back Button Position */
+.backButtonContainer {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  z-index: 10;
+}
+
+/* Logo Container */
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logoText {
+  font-size: 40px;
+  font-weight: 700;
+}
+.portalText {
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+/* Right section  */
+.rightSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 3rem;
+}
+
+/* Sign-In Card */
+.signInCard {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 430px;
+  text-align: left;
+  height: auto;
+  max-height: 497px;
+}
+
+/* Sign-In Title */
+.signInTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  margin-top: 40px;
+}
+
+/* Forgot Password Links */
+
+.passwordLinks {
+  display: flex;
+  flex-direction: row !important;
+  font-size: 16px;
+  gap: 10px;
+  margin-bottom: 1.8rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: 100%;
+}
+.passwordLinks a {
+  font-weight: 600;
+  color: #778f99;
+  text-decoration: none;
+}
+
+/* Input Fields */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.8rem;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 1rem 0; /* More spacing for better UI */
+  font-size: 16px; /* Slightly larger for readability */
+  outline: none;
+  background: none;
+  color: #222;
+  font-weight: 500;
+}
+
+/* Password Field */
+.passwordField {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.passwordField input {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Sign-In Button */
+.signInButton {
+  background-color: #c7efff;
+  padding: 18px;
+  margin-bottom: 50px;
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+  width: 430px;
+  max-width: 100%;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative; /* Allow positioning of Back Button */
+    padding: 1.5rem;
   }
-  
-  /* Back Button Position Outside Card (upper-left) */
-  .backButtonContainer {
-    position: absolute;
-    top: 60px;
-    left: 60px;
-    z-index: 10;
-  }
-  
-  /* Container for the logo and text in the left section */
-  .logoContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Group for logo and the h1 text displayed side by side */
-  .logoGroup {
-    display: flex;
-    align-items: center;
-    gap: 24px; 
-  }
-  
-  /* Styling for the h1 text beside the logo */
-  .logoText {
-    font-size: 40px;
-    font-weight: bold;
-  }
-  
-  /* Styling for the "Admin Portal" text */
-  .portalText {
-    font-size: 1.25rem;
-    margin-top: 40px;
-  }
-  
-  /* Right section styling */
-  .rightSection {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Moves card slightly closer to left */
-    padding-left: 3rem; /* Adjust this for positioning */
-  }
-  
-  /* Sign-In Card */
-  .signInCard {
-    background: #fff;
-    padding: 3rem; /* Increased for more space */
-    border-radius: 16px;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 430px; /* Increased width */
-    text-align: left;
-  }
-  
-  /* Sign-In Title */
-  .signInTitle {
-    font-size: 24px; /* Slightly larger */
-    font-weight: 600;
-    margin-bottom: 16px;
-    margin-top: 40px;
-  }
-  
-  /* Forgot Password Links */
-  .passwordLinks {
-    display: flex;
-    font-size: 0.875rem;
-    gap: 10px;
-    margin-bottom: 1.8rem;
-  }
-  
-  .passwordLinks span {
-    color: #555;
-  }
-  
-  .passwordLinks a {
-    font-weight: 600;
-    color: #778F99;
-    text-decoration: none;
-  }
-  
-  /* Input Fields */
-  .inputGroup {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.8rem;
-  }
-  
-  .inputGroup label {
-    font-size: 14px;
-    color: #555;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-    text-transform: lowercase;
-  }
-  
-  .inputGroup input {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    padding: 1rem 0; /* More spacing for better UI */
-    font-size: 16px; /* Slightly larger for readability */
-    outline: none;
-    background: none;
-    color: #222;
-    font-weight: 500;
-  }
-  
-  /* Password Field with Static Eye Icon */
-  .passwordField {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  
-  .passwordField input {
-    flex: 1;
-    padding-right: 40px;
-  }
-  
-  .eyeIcon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  /* Sign-In Button */
-  .signInButton {
-    background-color: #C7EFFF;
-    padding: 18px; 
-    margin-bottom: 50px;
-    border-radius: 30px;
-    font-size: 16px;
-    border: none;
-    width: 430px;
-    max-width: 100%;
-    text-align: center;
-    font-weight: 600;
-    opacity: 0.7;
-  }
-  
 
-  /* Responsive Styles */
-  @media (max-width: 1024px) {
-    .container {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-    }
-  
-    .rightSection {
-      justify-content: center;
-      padding-left: 0;
-    }
-  
-    .signInCard {
-      max-width: 90%;
-      margin: 1rem;
-      padding: 2rem;
-    }
+  .leftSection {
+    display: none;
   }
-  
+
+  .rightSection {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .signInCard {
+    max-width: 90%;
+    margin: 1rem;
+    padding: 2rem;
+  }
+
+  .signInTitle {
+    font-size: 22px;
+  }
+
+  .passwordLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Mobile  */
+@media (max-width: 768px) {
+  .signInCard {
+    padding: 1.5rem;
+  }
+
+  .inputGroup input {
+    padding: 0.8rem 0;
+    font-size: 14px;
+  }
+
+  .signInButton {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+}

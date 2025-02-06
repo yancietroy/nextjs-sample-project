@@ -1,6 +1,6 @@
 import styles from "@/styles/table.module.css";
 import Image from "next/image";
-import ActionColumn from "@/components/ActionColumn"; 
+import ActionColumn from "@/components/ActionColumn";
 
 export default function DataTable() {
   const tableData = [
@@ -19,7 +19,7 @@ export default function DataTable() {
       time: "10:40am",
       fullName: "David Zaleski",
       id: "######",
-      post: "I can't believe oct...",
+      post: "I can't believe October is already over, the trees in my backyard are all three colors! 🍁",
       type: "Text",
     },
     {
@@ -27,7 +27,7 @@ export default function DataTable() {
       time: "10:15am",
       fullName: "Ann Tubato",
       id: "######",
-      post: "I've recently mov...",
+      post: "I've recently moved from New York to Chicago, I don't know many people. Looking to find someone to hangout with or go for a run. I recently broke up with my girlfriend of 5 years.",
       type: "Text",
     },
     {
@@ -70,11 +70,16 @@ export default function DataTable() {
               <td>
                 <strong>{row.id}</strong>
               </td>
-              <td>{row.post}</td>
+              <td
+                className={styles.truncatedText}
+                title={typeof row.post === "string" ? row.post : ""}
+              >
+                {typeof row.post === "string" ? row.post : row.post}
+              </td>
               <td>
                 <strong>{row.type}</strong>
               </td>
-              <ActionColumn /> 
+              <ActionColumn />
             </tr>
           ))}
         </tbody>

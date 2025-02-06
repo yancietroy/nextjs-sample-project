@@ -1,7 +1,9 @@
 /* Dashboard Layout */
 .dashboardContainer {
   display: flex;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
   gap: 24px;
   padding-left: 24px;
   margin-right: 24px;
@@ -92,6 +94,8 @@
 /* Main Content Area */
 .mainContent {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
   margin-left: 72px;
   overflow-x: hidden;
