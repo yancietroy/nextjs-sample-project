@@ -187,8 +187,29 @@
 
 /* Mobile  */
 @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .leftSection {
+    display: none; 
+  }
+  .rightSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
   .signInCard {
+    max-width: 100%; 
     padding: 1.5rem;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  }
+  .rightSection {
+    height: auto;
   }
 
   .inputGroup input {
@@ -199,6 +220,21 @@
   .signInButton {
     padding: 14px;
     font-size: 14px;
+    width: 100%;
   }
-
+  .passwordLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  @media (max-width: 480px) {
+  .signInCard {
+    max-width: 95%;
+    padding: 1.2rem;
+  }
+}
 }
