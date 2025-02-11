@@ -20,13 +20,11 @@ export default function DataTable({ isFlaggedTable = false }) {
 
   useEffect(() => {
     if (isFlaggedTable) {
-      // ✅ Load flagged items from localStorage for Flagged Table
       const storedFlagged = JSON.parse(
         localStorage.getItem("flaggedItems") || "[]"
       );
       setTableData(storedFlagged);
     } else {
-      // ✅ Load default hardcoded data for Dashboard
       setTableData([
         {
           id: 1,
@@ -64,16 +62,14 @@ export default function DataTable({ isFlaggedTable = false }) {
     }
   }, [isFlaggedTable]);
 
-  // ✅ Fix: Explicitly Type `id` as `number`
   const handleFlagRow = (id: number) => {
     if (!isFlaggedTable) {
       const flaggedItem = tableData.find((row) => row.id === id);
       if (flaggedItem) {
-        // ✅ Ensure proper storage of text and images
         const cleanedItem = {
           ...flaggedItem,
-          id: Date.now(), // Ensure unique ID
-          post: flaggedItem.type === "Image" ? flaggedItem.post : flaggedItem.post, // Store image path correctly
+          id: Date.now(), 
+          post: flaggedItem.type === "Image" ? flaggedItem.post : flaggedItem.post, 
         };
 
         const existingFlagged = JSON.parse(

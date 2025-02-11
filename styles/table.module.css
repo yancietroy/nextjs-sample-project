@@ -48,10 +48,24 @@
   font-size: 16px;
   height: 67px;
 }
+/* Flag Button */
+.flagButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.flagButton:hover {
+  opacity: 0.5;
+}
 
 /* Flagged Row */
 .flaggedRow {
-  background-color: #ffe6e6; /* Light red background for flagged rows */
+  background-color: #ffe6e6; 
 }
 
 /* Truncated Text  */
