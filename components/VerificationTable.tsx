@@ -2,7 +2,7 @@ import styles from "@/styles/verificationTable.module.css";
 import Image from "next/image";
 
 export default function VerificationTable() {
-  // Hardcoded Table Data
+  // Table Data
   const tableData = [
     {
       date: "January 20, 2025",
