@@ -39,7 +39,6 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-
 }
 
 /* Bottom Menu */
@@ -57,12 +56,12 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   width: 100%;
 }
 .logoutButton:hover {
-    opacity: 0.5;
-  }
+  opacity: 0.5;
+}
 /* Check Button */
 .checkButton {
   background: none;
@@ -79,18 +78,33 @@
 }
 /* Home Button */
 .homeButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  .homeButton:hover {
-    opacity: 0.5;
-  }
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.homeButton:hover {
+  opacity: 0.5;
+}
+/* Flag Button */
+.flagButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.flagButton:hover {
+  opacity: 0.5;
+}
+
 /* Main Content Area */
 .mainContent {
   flex-grow: 1;

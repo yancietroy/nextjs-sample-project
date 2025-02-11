@@ -22,12 +22,12 @@ export default function Sidebar() {
           onClick={() => router.push("/Dashboard")}
         >
           <Image
-            src={
-              pathname.includes("/Dashboard") ? "/Home-fill.svg" : "/Home.svg"
-            }
-            alt="Home"
-            width={24}
-            height={24}
+        src={
+          pathname.includes("/Dashboard") ? "/Home-fill.svg" : "/Home.svg"
+        }
+        alt="Home"
+        width={24}
+        height={24}
           />
         </button>
         <button
@@ -35,17 +35,22 @@ export default function Sidebar() {
           onClick={() => router.push("/Verification")}
         >
           <Image
-            src={
-              pathname.includes("/Verification")
-                ? "/Verified-fill.svg"
-                : "/Verified.svg"
-            }
-            alt="Verified"
-            width={24}
-            height={24}
+        src={
+          pathname.includes("/Verification")
+            ? "/Verified-fill.svg"
+            : "/Verified.svg"
+        }
+        alt="Verified"
+        width={24}
+        height={24}
           />
         </button>
-        <Image src="/flag.svg" alt="Flag" width={24} height={24} />
+        <button
+          className={styles.flagButton}
+          onClick={() => router.push("/Flagged")}
+        >
+          <Image src="/flag.svg" alt="Flag" width={24} height={24} />
+        </button>
       </nav>
 
       <div className={styles.bottomMenu}>

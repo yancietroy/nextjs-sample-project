@@ -49,6 +49,11 @@
   height: 67px;
 }
 
+/* Flagged Row */
+.flaggedRow {
+  background-color: #ffe6e6; /* Light red background for flagged rows */
+}
+
 /* Truncated Text  */
 .truncatedText {
   max-width: 134.86px;
@@ -110,13 +115,7 @@
   display: none;
 }
 
-/* Flag Icon */
-.flagIcon {
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  width: auto;
-}
+
 
 /* Responsives */
 @media (max-width: 768px) {
