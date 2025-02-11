@@ -4,7 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "@/styles/table.module.css";
 
-export default function ActionColumn({ onFlag }) {
+
+interface ActionColumnProps {
+  onFlag: () => void;
+}
+
+export default function ActionColumn({ onFlag }: ActionColumnProps) {
   const [verified, setVerified] = useState(false);
 
   const handleVerifyClick = () => {
@@ -13,7 +18,7 @@ export default function ActionColumn({ onFlag }) {
 
   return (
     <td className={styles.actionColumn}>
-      {/* ✅ Verify Button */}
+      {/* Verify Button */}
       <button
         className={`${styles.verifyButton} ${verified ? "verified" : ""}`}
         onClick={handleVerifyClick}
@@ -26,7 +31,7 @@ export default function ActionColumn({ onFlag }) {
         />
       </button>
 
-      {/* 🚩 Flag Button - Moves Row to Flagged Table */}
+      {/* Flag Button */}
       <button onClick={onFlag} className={styles.flagButton}>
         <Image src="/red-flag.svg" alt="Flag" width={24} height={24} />
       </button>

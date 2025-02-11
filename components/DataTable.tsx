@@ -5,14 +5,25 @@ import Image from "next/image";
 import ActionColumn from "@/components/ActionColumn";
 import { useState, useEffect } from "react";
 
+// ✅ Define TableRow Interface
+interface TableRow {
+  id: number;
+  date: string;
+  time: string;
+  fullName: string;
+  post: string;
+  type: string;
+}
+
 export default function DataTable({ isFlaggedTable = false }) {
-  const [tableData, setTableData] = useState([]);
+  const [tableData, setTableData] = useState<TableRow[]>([]);
 
   useEffect(() => {
     if (isFlaggedTable) {
       // ✅ Load flagged items from localStorage for Flagged Table
-      const storedFlagged =
-        JSON.parse(localStorage.getItem("flaggedItems")) || [];
+      const storedFlagged = JSON.parse(
+        localStorage.getItem("flaggedItems") || "[]"
+      );
       setTableData(storedFlagged);
     } else {
       // ✅ Load default hardcoded data for Dashboard
@@ -53,23 +64,22 @@ export default function DataTable({ isFlaggedTable = false }) {
     }
   }, [isFlaggedTable]);
 
-  const handleFlagRow = (id) => {
+  // ✅ Fix: Explicitly Type `id` as `number`
+  const handleFlagRow = (id: number) => {
     if (!isFlaggedTable) {
       const flaggedItem = tableData.find((row) => row.id === id);
       if (flaggedItem) {
-        // ✅ Generate a new unique ID for flagged items
+        // ✅ Ensure proper storage of text and images
         const cleanedItem = {
           ...flaggedItem,
-          id: Date.now(), // Generates a unique timestamp-based ID
-          post:
-            flaggedItem.type === "Image" ? flaggedItem.post : flaggedItem.post, // Store image path correctly
+          id: Date.now(), // Ensure unique ID
+          post: flaggedItem.type === "Image" ? flaggedItem.post : flaggedItem.post, // Store image path correctly
         };
 
-        // ✅ Store flagged items in localStorage
-        const existingFlagged =
-          JSON.parse(localStorage.getItem("flaggedItems")) || [];
+        const existingFlagged = JSON.parse(
+          localStorage.getItem("flaggedItems") || "[]"
+        );
 
-        // ✅ Ensure no duplicates exist before adding
         const updatedFlagged = [...existingFlagged, cleanedItem].filter(
           (item, index, self) =>
             index === self.findIndex((t) => t.id === item.id)
@@ -77,7 +87,6 @@ export default function DataTable({ isFlaggedTable = false }) {
 
         localStorage.setItem("flaggedItems", JSON.stringify(updatedFlagged));
 
-        // ✅ Remove from Dashboard table
         setTableData((prevData) => prevData.filter((row) => row.id !== id));
       }
     }
